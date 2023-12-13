@@ -30,5 +30,21 @@ def home():
 def articles():
    return render_template('article.html')
 
+@app.route('/about', methods=['GET'])
+def about():
+   return render_template('about.html')
+
+@app.route('/report', methods=['GET'])
+def report():
+   return render_template('report.html')
+
+@app.route('/signin', methods=['GET'])
+def sigin():
+   return render_template('signin.html')
+
+@app.route('/v2', methods=['GET'])
+def dashboard():
+   return render_template('dasboard.html')
+
 if __name__ == '__main__':
    app.run('0.0.0.0', port=5000, debug=True)

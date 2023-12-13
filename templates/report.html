@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hello Bulma!</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+<body>
+
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">
+        <img src="{{url_for('static', filename='LOGO.png')}}" width="auto" height="28">
+        <strong
+        class="logo-text"
+        >Student Wellness
+        </strong
+        >
+      </a>
+
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="/">
+          Home
+        </a>
+
+        <a class="navbar-item" href="/articles">
+          Articles
+        </a>
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            More
+          </a>
+
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="/about">
+              About
+            </a>
+            <hr class="navbar-divider">
+            <a class="navbar-item">
+              Report an issue
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+            <a class="button is-link" href="/signup">
+              <strong>Sign up</strong>
+            </a>
+            <a class="button is-light" href="/sigin">
+              Log in
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <nav class="breadcrumb" aria-label="breadcrumbs">
+    <div class="container">
+      <ul>
+        <li><a href="/">Student Wellness</a></li>
+        <li><a href="/">Home</a></li>
+        <li class="is-active"><a href="/" aria-current="page">Articles</a></li>
+      </ul>
+      
+    </div>
+  </nav>
+
+
+  <section class="section">
+    <div class="container">
+      <div class="block has-text-centered">
+        <h1 class="title">Report an issue</h1>
+      </div>
+
+      <div class="block has-item-centered">
+        <div class="box" style="max-width: 30em; margin: auto;">
+          
+          <div class="field">
+            <label class="label">Url where you found the issue</label>
+            <div class="control">
+              <input class="input" type="text" placeholder="ex: https:://issue.html">
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Description an issue (Optional)</label>
+            <div class="control">
+              <textarea class="textarea" placeholder="Description...."></textarea>
+            </div>
+          </div>
+
+          <nav class="level">
+            <div class="level-left"></div>
+            <div class="level-right">
+              <div class="leve-item">
+                <button class="button is-link">Report</button>
+              </div>
+            </div>
+          </nav>
+
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+
+
+  <footer class="footer">
+
+    <div class="">
+
+      <section class="section">
+        <article class="media">
+          <figure class="media-left" style="align-self: center">
+            <a class="image is-64x64" href="#">
+              <img class="" src="{{ url_for('static', filename='LOGO.png') }}">
+            </a>
+          </figure>
+          <div class="media-">
+            <strong
+            class="logo-text pt-3"
+            >Student Wellness
+            </strong
+            >
+          </div>
+        </article>
+        <div class="columns">
+          <div class="column">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </div>
+          <div class="column">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </div>
+          <div class="column">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="content has-text-centered">
+      <div class="container">
+
+        <nav class="level">
+          <div class="level-left">
+            <div class="level-item">
+              <strong>@Kelompok6, 2023</strong>
+            </div>
+          </div>
+
+          <div class="level-right">
+            <div class="level-item">
+              <strong>Follow kami di:</strong>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
