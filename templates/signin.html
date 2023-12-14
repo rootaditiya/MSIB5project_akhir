@@ -1,49 +1,152 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hello Bulma!</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-</head>
-<body>
+{% extends 'base2.html' %}
+{% block title %}Student Wellness | Sehat dan Sukses{% endblock %}
 
-  <section class="section">
-    <div class="container">
-      <div class="block has-text-centered">
-        <h1 class="title">Report an issue</h1>
-      </div>
+{% block header %}
+<!-- header -->
+{% endblock %}
 
-      <div class="block has-item-centered">
-        <div class="box" style="max-width: 30em; margin: auto;">
-          
-          <div class="field">
-            <label class="label">Url where you found the issue</label>
-            <div class="control">
-              <input class="input" type="text" placeholder="ex: https:://issue.html">
-            </div>
+{% block content %}
+<section class="section">
+  <div class="columns">
+    <div class="column m-auto">
+      <div class="ml-6">
+        <p class="title block">
+          <strong class="is-info">
+            Student Wellness
+          </strong>
+        </p>
+        <p class="subtitle block">
+          <div class="">
+            Sehat dan Sukses!
           </div>
-
-          <div class="field">
-            <label class="label">Description an issue (Optional)</label>
-            <div class="control">
-              <textarea class="textarea" placeholder="Description...."></textarea>
-            </div>
-          </div>
-
-          <nav class="level">
-            <div class="level-left"></div>
-            <div class="level-right">
-              <div class="leve-item">
-                <button class="button is-link">Report</button>
-              </div>
-            </div>
-          </nav>
-
-        </div>
-        
+        </p>
       </div>
     </div>
-  </section>
-</body>
-</html>
+    <div class="column">
+
+     <div class="container">
+      <div class="box" style="max-width: 480px; margin: auto">
+        <article class="media">
+          <div class="media-content">
+            <div class="content">
+              <div class="field has-addons">
+                <div class="control has-icons-left" style="width: 100%">
+                  <input
+                  id="input-username"
+                  class="input"
+                  type="text"
+                  placeholder="id"
+                  />
+                  <span class="icon is-small is-left"
+                  ><i class="fa fa-user"></i
+                  ></span>
+                </div>
+                <div id="btn-check-dup" class="control is-hidden">
+                  <button class="button is-sparta" onclick="check_dup()">
+                    Check your id
+                  </button>
+                </div>
+              </div>
+              <p id="help-id" class="help is-hidden">
+                For your id, please enter 2-10 English characters, numbers, or
+                the following special characters (._-)
+              </p>
+              <p id="help-id-login" class="help is-danger"></p>
+
+              <div class="field">
+                <div class="control has-icons-left">
+                  <input
+                  id="input-password"
+                  class="input"
+                  type="password"
+                  placeholder="password"
+                  />
+                  <span class="icon is-small is-left"
+                  ><i class="fa fa-lock"></i
+                  ></span>
+                </div>
+                <p id="help-password" class="help is-hidden">
+                  For your password, please enter 8-20 English characters,
+                  numbers, or the following special characters (!@#$%^&*)
+                </p>
+              </div>
+            </div>
+            <div id="div-sign-in-or-up" class="has-text-centered">
+              <nav class="level is-mobile">
+                <button
+                class="level-item button is-sparta"
+                onclick="sign_in()"
+                >
+                Sign In
+              </button>
+
+            </nav>
+            <hr />
+            <h4 class="mb-3">If you have not yet signed up</h4>
+            <nav class="level is-mobile">
+              <button
+              class="level-item button is-sparta is-outlined"
+              onclick="toggle_sign_up()"
+              >
+              Sign Up
+            </button>
+          </nav>
+        </div>
+
+        <div id="sign-up-box" class="">
+          <div class="mb-5">
+            <div class="field">
+              <div class="control has-icons-left" style="width: 100%">
+                <input
+                id="input-password2"
+                class="input"
+                type="password"
+                placeholder="Confirm your password"
+                />
+                <span class="icon is-small is-left"
+                ><i class="fa fa-lock"></i
+                ></span>
+              </div>
+              <p id="help-password2" class="help">
+                Please enter in your password again
+              </p>
+            </div>
+          </div>
+          <div class="field">
+            <div class="control has-icons-left has-icons-right">
+              <input class="input is-danger" type="email" placeholder="Your email address" value="">
+              <span class="icon is-small is-left">
+                <i class="fas fa-envelope"></i>
+              </span>
+              <span class="icon is-small is-right">
+                <i class="fas fa-exclamation-triangle"></i>
+              </span>
+            </div>
+            <p class="help is-danger is-hidden">This email is invalid</p>
+          </div>
+          <nav class="level is-mobile">
+            <button
+            class="level-item button is-sparta"
+            onclick="sign_up()"
+            >
+            Sign Up
+          </button>
+          <button
+          class="level-item button is-sparta is-outlined"
+          onclick="toggle_sign_up()"
+          >
+          Cancel
+        </button>
+
+      </nav>
+    </div>
+  </div>
+</article>
+</div>
+</div>
+
+</div>
+
+</div>
+</section>
+{% endblock %}
