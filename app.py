@@ -44,7 +44,7 @@ def sigin():
 
 @app.route('/v2', methods=['GET'])
 def dashboard():
-   return render_template('dasboard.html')
+   return render_template('home.html')
 
 # @app.route('/', methods=['GET'])
 # def home():

@@ -1,56 +1,78 @@
-<nav class="navbar" role="navigation" aria-label="main navigation">
+<nav id="header" class="navbar is-fixed-top box-shadow-y" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
+    <a
+    role="button"
+    class="navbar-burger toggler"
+    aria-label="menu"
+    aria-expanded="false"
+    data-target="sidebar"
+    id="toggler"
+    >
+
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+  </a>
+
+  <a class="navbar-item" href="/">
+    <img src="{{url_for('static', filename='LOGO.png')}}" width="auto" height="28">
+    <strong
+    class="logo-text"
+    >Student Wellness
+    </strong
+    >
+  </a>
+
+  <a role="button" class="navbar-burger nav-toggler" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+  </a>
+</div>
+
+<div id="navbarBasicExample" class="navbar-menu">
+  <div class="navbar-start">
     <a class="navbar-item" href="/">
-      <img src="{{url_for('static', filename='LOGO.png')}}" width="auto" height="28">
-      <strong
-      class="logo-text"
-      >Student Wellness
-      </strong
-      >
+      Home
     </a>
 
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
+    <a class="navbar-item" href="/articles">
+      Articles
     </a>
-  </div>
 
-  <div id="navbarBasicExample" class="navbar-menu">
-    <div class="navbar-start">
-      <a class="navbar-item" href="/">
-        Home
+    <div class="navbar-item has-dropdown is-hoverable">
+      <a class="navbar-link">
+        More
       </a>
 
-      <a class="navbar-item" href="/articles">
-        Articles
-      </a>
-
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          More
+      <div class="navbar-dropdown">
+        <a class="navbar-item" href="/about">
+          About
         </a>
-
-        <div class="navbar-dropdown">
-          <a class="navbar-item" href="/about">
-            About
-          </a>
-          <hr class="navbar-divider">
-          <a class="navbar-item">
-            Report an issue
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <div class="navbar-end">
-      <div class="navbar-item">
-        <div class="buttons">
-          <a class="button is-link" href="/signup">
-            <strong>Login</strong>
-          </a>
-        </div>
+        <hr class="navbar-divider">
+        <a class="navbar-item" href="/report">
+          Report an issue
+        </a>
       </div>
     </div>
   </div>
+
+  <div class="navbar-end">
+
+    <div class="navbar-item">
+      <div class="buttons">
+        <a class="button is-link" href="/signin">
+          <strong>Login</strong>
+        </a>
+      </div>
+    </div>
+
+    <div class="navbar-item has-dropdown is-hoverable">
+      <a href="#" class="navbar-link">
+        User 1
+      </a>
+    </div>
+</div>
+</div>
 </nav>
+

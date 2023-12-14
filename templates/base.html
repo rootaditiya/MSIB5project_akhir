@@ -4,18 +4,24 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% block title %}{% endblock %} - Student Wellness</title>
+  <link rel="shortcut icon" href="{{url_for('static', filename='favico.ico')}}" type="image/x-icon" />
+  <link rel="icon" href="{{url_for('static', filename='favico.ico')}}" type="image/x-icon" />
+
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/style.css')}}">
+  
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js" integrity="sha512-zMfrMAZYAlNClPKjN+JMuslK/B6sPM09BGvrWlW+cymmPmsUT1xJF3P4kxI3lOh9zypakSgWaTpY6vDJY/3Dig==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
-<body>
+<body class="has-navbar-fixed-top">
 
   {%include 'header.html'%}
 
-    <header>
-      {% block header %}{% endblock %}
-    </header>
+  <header>
+    {% block header %}{% endblock %}
+  </header>
 
-    {% block content %}{% endblock %}
+  {% block content %}{% endblock %}
 
   {%include 'footer.html'%}
 </body>
