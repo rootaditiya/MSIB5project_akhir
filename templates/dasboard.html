@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hello Bulma!</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+<body>
+
+  {%include "header.html"%}
+
+
+  <nav class="breadcrumb" aria-label="breadcrumbs">
+    <div class="container">
+      <ul>
+        <li><a href="/">Student Wellness</a></li>
+        <li><a href="/">Home</a></li>
+        <li class="is-active"><a href="/" aria-current="page">Articles</a></li>
+      </ul>
+      
+    </div>
+  </nav>
+
+
+  <section class="section">
+    <div class="container">
+      <div class="block has-text-centered">
+        <h1 class="title">Report an issue</h1>
+      </div>
+
+      <div class="block has-item-centered">
+        <div class="box" style="max-width: 30em; margin: auto;">
+
+          <div class="field">
+            <label class="label">Url where you found the issue</label>
+            <div class="control">
+              <input class="input" type="text" placeholder="ex: https:://issue.html">
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Description an issue (Optional)</label>
+            <div class="control">
+              <textarea class="textarea" placeholder="Description...."></textarea>
+            </div>
+          </div>
+
+          <nav class="level">
+            <div class="level-left"></div>
+            <div class="level-right">
+              <div class="leve-item">
+                <button class="button is-link">Report</button>
+              </div>
+            </div>
+          </nav>
+
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+
+  <!-- {%include "footer.html"%} -->
+  
+</body>
+</html>

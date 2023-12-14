@@ -46,5 +46,11 @@ def sigin():
 def dashboard():
    return render_template('dasboard.html')
 
+# @app.route('/', methods=['GET'])
+# def home():
+#    return render_template('test.html')
+
+
+
 if __name__ == '__main__':
    app.run('0.0.0.0', port=5000, debug=True)
