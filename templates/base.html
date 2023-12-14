@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% block title %}{% endblock %} - Student Wellness</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/style.css')}}">
 </head>
 <body>
 
@@ -13,7 +14,7 @@
     <header>
       {% block header %}{% endblock %}
     </header>
-    
+
     {% block content %}{% endblock %}
 
   {%include 'footer.html'%}
