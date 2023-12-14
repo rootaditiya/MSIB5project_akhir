@@ -4,43 +4,61 @@
 
     <section class="section">
       <article class="media">
-        <figure class="media-left" style="align-self: center">
-          <a class="image is-64x64" href="#">
-            <img class="" src="{{ url_for('static', filename='LOGO.png') }}">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="/">
+            <img src="{{url_for('static', filename='LOGO.png')}}" width="auto" height="28">
+            <strong
+            class="logo-text"
+            >Student Wellness
+            </strong
+            >
           </a>
-        </figure>
-        <div class="media-">
-          <strong
-          class="logo-text pt-3"
-          >Student Wellness
-          </strong
-          >
         </div>
       </article>
       <div class="columns">
         <div class="column">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          <div class="block">
+            <strong class="">Site Map</strong>
+          </div>
+          <div class="">
+            <ul>
+              <li>
+                <a class="" href="/">home</a> 
+              </li>
+              <li>
+                <a href="/articles">Articles</a>
+              </li>
+              <li>
+                <a href="/about">About</a>
+              </li>
+              <li>
+                <a href="/report">Report issue</a>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+        <div class="column is-two-fifths">
+          <div class="block">
+            Layanan Pengaduan Konsumen
+          </div>
+          <div class="block">
+            <strong>
+              <a href="mailto:help@studentwellness.glitch.me">help@studentwellness.com</a> / 
+              <a href="tel:021-xxxx-xxxx">021-xxxx-xxxx</a>
+            </strong>
+          </div>
+          <div class="block">
+            Direktorat Jenderal Perlindungan Konsumen dan Tertib Niaga
+            Kementerian Perdagangan Republik Indonesia
+            0853 1111 1010 (WhatsApp)
+          </div>
         </div>
         <div class="column">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </div>
-        <div class="column">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          <strong>Daftar sebagai Konselor?</strong>
+          <div class="block mt-2">
+            <a href="/daftar/konselor" class="button is-info">Daftar</a>
+          </div>
         </div>
       </div>
     </div>
