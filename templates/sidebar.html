@@ -1,4 +1,5 @@
   <aside class="menu">
+    {%if role == "pasien"%}
     <p class="menu-label">
       General
     </p>
@@ -6,6 +7,7 @@
       <li><a>Home</a></li>
       <li><a>Activity History</a></li>
     </ul>
+    {%else%}
     <p class="menu-label">
       Order
     </p>
@@ -21,10 +23,11 @@
       </li>
       
     </ul>
+    {%endif%}
     <p class="menu-label">
       User 1
     </p>
     <ul class="menu-list">
-      <li><a>Logout</a></li>
+      <li><a href="/signin">Logout</a></li>
     </ul>
   </aside>

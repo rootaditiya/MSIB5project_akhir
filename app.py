@@ -50,13 +50,8 @@ def sign_up():
 
 @app.route('/v2', methods=['GET'])
 def main():
-   main = dashboard.home()
-   if main == "success":
-      return render_template("home.html")
-   elif main == "expired":
-      return redirect(url_for("login", msg="Your token has expired"))
-   else:
-      return redirect(url_for("login", msg="There was problem logging you in"))
+   return dashboard.home()
+
 
 @app.route('/v2/konseling', methods=['GET'])
 def konseling():
