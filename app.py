@@ -1,6 +1,7 @@
 from flask import Flask, render_template, redirect, url_for, request
 import Controller.Home.home as dashboard
 import Controller.LoginSignup.login_or_signup as auth
+import Controller.admin.article as article
 
 app = Flask(__name__)
 
@@ -62,16 +63,30 @@ def main():
 @app.route('/v2/<user>/articles', methods=['GET'])
 def articles_doc(user):
    valid = dashboard.valid()
-   
+
    if valid == "expired":
-      return redirect(url_for("login", msg="There was problem logging you in"))
+      return redirect(url_for("main"))
    elif valid == "fail":
-      return redirect(url_for("login", msg="There was problem logging you in"))
+      return redirect(url_for("main"))
    else:
       return render_template('dokter/articles.html', user=user)
-   
 
+@app.route('/v2/<user>/api/post_article', methods=['POST'])
+def articles_post(user):
+   valid = dashboard.valid()
+   user = user
 
+   if valid == "expired":
+      return redirect(url_for("main"))
+   elif valid == "fail":
+      return redirect(url_for("main"))
+   else:
+      return article.save_post(user)
+
+@app.route('/v2/<user>/api/get_articles', methods=['GET'])
+def articles_get(user):
+   username = user
+   return article.show_post(user)
 
 if __name__ == '__main__':
    app.run('0.0.0.0', port=5000, debug=True)
