@@ -1,18 +1,11 @@
-from pymongo import MongoClient
-import jwt
-from datetime import datetime, timedelta
-from pymongo import MongoClient
-import jwt
-import datetime
-import hashlib
-from flask import Flask, render_template, jsonify, request, redirect, url_for
-from werkzeug.utils import secure_filename
-from datetime import datetime, timedelta
+from flask import Flask, render_template, redirect, url_for, request
+import Controller.Home.home as dashboard
+import Controller.LoginSignup.login_or_signup as auth
 
 app = Flask(__name__)
 
 app.config['TEMPLATES_AUTO_RELOAD'] = True
-app.config['UPLOAD_FOLDER'] = './static/profile_pics'
+# app.config['UPLOAD_FOLDER'] = './static/profile_pics'
 
 SECRET_KEY = 'KLP6'
 
@@ -24,7 +17,6 @@ MONGODB_CONNECTION_STRING = ''
 @app.route('/', methods=['GET'])
 def home():
    return render_template('index.html')
-
 
 @app.route('/articles', methods=['GET'])
 def articles():
@@ -39,16 +31,36 @@ def report():
    return render_template('report.html')
 
 @app.route('/signin', methods=['GET'])
-def sigin():
-   return render_template('signin.html')
+def login():
+   msg = request.args.get("msg")
+   return render_template("signin.html", msg=msg)
+
+@app.route("/sign_in", methods=["POST"])
+def sign_in():
+   return auth.sign_in()
+
+@app.route('/sign_up/check_dup', methods=['POST'])
+def check_dup():
+   return auth.check_dup()
+
+@app.route("/sign_up/save", methods=["POST"])
+def sign_up():
+   return auth.sign_up()
+
 
 @app.route('/v2', methods=['GET'])
-def dashboard():
-   return render_template('home.html')
+def main():
+   main = dashboard.home()
+   if main == "success":
+      return render_template("home.html")
+   elif main == "expired":
+      return redirect(url_for("login", msg="Your token has expired"))
+   else:
+      return redirect(url_for("login", msg="There was problem logging you in"))
 
-# @app.route('/', methods=['GET'])
-# def home():
-#    return render_template('test.html')
+@app.route('/v2/konseling', methods=['GET'])
+def konseling():
+   return render_template('konseling.html')
 
 
 

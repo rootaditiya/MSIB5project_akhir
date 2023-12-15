@@ -1,4 +1,13 @@
 {% extends 'base.html' %}
+{% block js %}
+<script src="{{url_for('static', filename='scripts/auth/login.js')}}"></script>
+<script type="text/javascript">
+  {% if msg %}
+  alert("{{ msg }}")
+  {% endif %}
+</script>
+
+{% endblock %}
 {% block title %}Student Wellness | Sehat dan Sukses{% endblock %}
 
 {% block header %}
@@ -93,7 +102,7 @@
           </nav>
         </div>
 
-        <div id="sign-up-box" class="">
+        <div id="sign-up-box" class="is-hidden">
           <div class="mb-5">
             <div class="field">
               <div class="control has-icons-left" style="width: 100%">
@@ -114,7 +123,7 @@
           </div>
           <div class="field">
             <div class="control has-icons-left has-icons-right">
-              <input class="input is-danger" type="email" placeholder="Your email address" value="">
+              <input id="input-email" class="input" type="email" placeholder="Your email address" value="">
               <span class="icon is-small is-left">
                 <i class="fas fa-envelope"></i>
               </span>
