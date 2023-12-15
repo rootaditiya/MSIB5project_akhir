@@ -1,11 +1,11 @@
   <aside class="menu">
-    {%if role == "pasien"%}
+    {%if user.role == "pasien"%}
     <p class="menu-label">
       General
     </p>
     <ul class="menu-list">
-      <li><a>Home</a></li>
-      <li><a>Activity History</a></li>
+      <li><a href="/v2">Home</a></li>
+      <li><a href="/v2/activity">Activity History</a></li>
     </ul>
     {%else%}
     <p class="menu-label">
@@ -15,9 +15,9 @@
       <li>
         <a class="">To Do</a>
         <ul>
-          <li><a>Konseling</a></li>
+          <li><a href="">Konseling</a></li>
           <li><a>Konsultasi karir</a></li>
-          <li><a>Articles</a></li>
+          <li><a href="/v2/{{user.username}}/articles">Articles</a></li>
 
         </ul>
       </li>

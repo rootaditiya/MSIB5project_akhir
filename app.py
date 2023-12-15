@@ -50,12 +50,26 @@ def sign_up():
 
 @app.route('/v2', methods=['GET'])
 def main():
-   return dashboard.home()
+   valid = dashboard.valid()
 
-
-@app.route('/v2/konseling', methods=['GET'])
-def konseling():
-   return render_template('konseling.html')
+   if valid == "expired":
+      return redirect(url_for("login", msg="There was problem logging you in"))
+   elif valid == "fail":
+      return redirect(url_for("login", msg="There was problem logging you in"))
+   else:
+      return render_template("home.html", user=valid)
+      
+@app.route('/v2/<user>/articles', methods=['GET'])
+def articles_doc(user):
+   valid = dashboard.valid()
+   
+   if valid == "expired":
+      return redirect(url_for("login", msg="There was problem logging you in"))
+   elif valid == "fail":
+      return redirect(url_for("login", msg="There was problem logging you in"))
+   else:
+      return render_template('dokter/articles.html', user=user)
+   
 
 
 

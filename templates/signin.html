@@ -8,7 +8,19 @@
 </script>
 
 {% endblock %}
-{% block title %}Student Wellness | Sehat dan Sukses{% endblock %}
+{% block title %}Sign In{% endblock %}
+
+{% block button %}
+<!-- button -->
+<div class="navbar-item" id="login-button">
+  <div class="buttons">
+    <a class="button is-link" href="/signin" onclick="$('#login-button').toggeClass('is-hidden')">
+      <strong>Login</strong>
+    </a>
+  </div>
+</div>
+{% endblock %}
+
 
 {% block header %}
 <!-- header -->
