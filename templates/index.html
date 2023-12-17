@@ -1,306 +1,173 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Student Wellness</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+{% extends 'base.html' %}
 
-  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-</head>
-<body>
-  <nav class="navbar" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-      <a class="navbar-item" href="/">
-        <img src="{{url_for('static', filename='LOGO.png')}}" width="auto" height="28">
-        <strong
-        class="logo-text"
-        >Student Wellness
-        </strong
-        >
-      </a>
+{% block title %}Student Wellness | Sehat dan Sukses{% endblock %}
 
-      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </a>
-    </div>
+{% block button_login %}
+<!-- button -->
+<h1>test</h1>
+{% endblock %}
 
-    <div id="navbarBasicExample" class="navbar-menu">
-      <div class="navbar-start">
-        <a class="navbar-item">
-          Home
-        </a>
+{% block header %}
+<nav class="breadcrumb" aria-label="breadcrumbs">
+  <div class="container">
+    <ul>
+      <li><a href="/">Student Wellness</a></li>
+      <li class="is-active"><a href="/" aria-current="page">home</a></li>
+    </ul>
 
-        <a class="navbar-item">
-          Articles
-        </a>
+  </div>
+</nav>
+{% endblock %}
 
-        <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link">
-            More
-          </a>
+{% block content %}
+{%include "fitur.html"%}
 
-          <div class="navbar-dropdown">
-            <a class="navbar-item">
-              About
-            </a>
-            <a class="navbar-item">
-              Contact
-            </a>
-            <hr class="navbar-divider">
-            <a class="navbar-item">
-              Report an issue
-            </a>
-          </div>
+<section class="section">
+  <div class="container">
+    <h1 class="title">Baca artikel seputar kesehatan mahasiswa</h1>
+
+    <div class="level is-tag">
+      <div class="level-left">
+        <div class="level-item">
+          <span class="tag is-info is-light">
+            Terbaru
+          </span>
         </div>
-      </div>
-
-      <div class="navbar-end">
-        <div class="navbar-item">
-          <div class="buttons">
-            <a class="button is-link">
-              <strong>Sign up</strong>
-            </a>
-            <a class="button is-light">
-              Log in
-            </a>
-          </div>
+        <div class="level-item">
+          <span class="tag">
+            Populer
+          </span>
         </div>
-      </div>
-    </div>
-  </nav>
-
-  <section class="section">
-    <div class="container">
-      <h1 class="title">
-        Sehat dan Sukses
-      </h1>
-      <p class="subtitle">
-        Konseling, psyco test, curhat, konsultasi karir, test IQ,dan update informasi seputar masalah kesehatan mahasiswa
-      </p>
-
-      <div class="columns">
-        <div class="column is-2">
-          <div class="card">
-            <div class="card-image">
-              <figure class="image">
-                <img class="" src="https://bulma.io/images/placeholders/96x96.png" alt="Konseling">
-              </figure>
-
-            </div>
-            <div class="card-content">
-              <div class="media">
-                <div class="media-content has-text-centered">
-                  <p class="title is-6">Konseling</p>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="level-item">
+          <span class="tag">
+            Mentalhealt
+          </span>
         </div>
-        <div class="column is-2">
-          <div class="card">
-            <div class="card-image">
-              <figure class="image">
-                <img class="" src="https://bulma.io/images/placeholders/96x96.png" alt="Konseling">
-              </figure>
-
-            </div>
-            <div class="card-content">
-              <div class="media">
-                <div class="media-content has-text-centered">
-                  <p class="title is-6">Konsultasi karir</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="column is-2">
-          <div class="card">
-            <div class="card-image">
-              <figure class="image">
-                <img class="" src="https://bulma.io/images/placeholders/96x96.png" alt="Konseling">
-              </figure>
-
-            </div>
-            <div class="card-content">
-              <div class="media">
-                <div class="media-content has-text-centered">
-                  <p class="title is-6">Psyco test</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="column is-2">
-          <div class="card">
-            <div class="card-image">
-              <figure class="image">
-                <img class="" src="https://bulma.io/images/placeholders/96x96.png" alt="Konseling">
-              </figure>
-
-            </div>
-            <div class="card-content">
-              <div class="media">
-                <div class="media-content has-text-centered">
-                  <p class="title is-6">Curhat dong</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
       </div>
 
     </div>
-  </section>
 
-  <section class="section">
-    <div class="container">
-      <h1 class="title">Baca artikel seputar kesehatan mahasiswa</h1>
-      
-      <div class="level is-tag">
-        <div class="level-left">
-          <div class="level-item">
-            <span class="tag is-info is-light">
-              Terbaru
-            </span>
+    <div class="columns is-multiline is-mobile">
+
+      <div class="column is-one-quarter">
+        <div class="card">
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+            </figure>
           </div>
-          <div class="level-item">
-            <span class="tag">
-              Populer
-            </span>
-          </div>
-          <div class="level-item">
-            <span class="tag">
-              Mentalhealt
-            </span>
+          <div class="card-content">
+
+
+            <div class="content">
+              <h1 class="title">Berita baru</h1>
+
+              <div class="block">
+                <span class="tag">Politik</span>
+                <span class="tag">otomotif</span>
+              </div>
+              <p>
+
+                <small>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+                  <a href="#">#css</a> <a href="#">#responsive</a>
+                </small>
+              </p>
+              <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+            </div>
           </div>
         </div>
-
       </div>
 
-      <div class="columns">
-        <div class="column">
-
-          <div class="card">
-            <div class="card-image">
-              <figure class="image is-4by3">
-                <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-              </figure>
-            </div>
-            <div class="card-content">
-              <div class="media">
-                <div class="media-left">
-                  <figure class="image is-48x48">
-                    <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
-                  </figure>
-                </div>
-                <div class="media-content">
-                  <p class="title is-4">John Smith</p>
-                  <p class="subtitle is-6">@johnsmith</p>
-                </div>
-              </div>
-
-              <div class="content">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-                <a href="#">#css</a> <a href="#">#responsive</a>
-                <br>
-                <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-              </div>
-            </div>
+      <div class="column is-one-quarter">
+        <div class="card">
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+            </figure>
           </div>
+          <div class="card-content">
 
-        </div>
-        <div class="column">
-          <div class="card">
-            <div class="card-image">
-              <figure class="image is-4by3">
-                <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-              </figure>
-            </div>
-            <div class="card-content">
-              <div class="media">
-                <div class="media-left">
-                  <figure class="image is-48x48">
-                    <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
-                  </figure>
-                </div>
-                <div class="media-content">
-                  <p class="title is-4">John Smith</p>
-                  <p class="subtitle is-6">@johnsmith</p>
-                </div>
-              </div>
 
-              <div class="content">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-                <a href="#">#css</a> <a href="#">#responsive</a>
-                <br>
-                <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+            <div class="content">
+              <h1 class="title">Berita baru</h1>
+
+              <div class="block">
+                <span class="tag">Politik</span>
+                <span class="tag">otomotif</span>
               </div>
+              <p>
+
+                <small>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+                  <a href="#">#css</a> <a href="#">#responsive</a>
+                </small>
+              </p>
+              <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
             </div>
           </div>
         </div>
-        <div class="column">
-          <div class="card">
-            <div class="card-image">
-              <figure class="image is-4by3">
-                <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-              </figure>
-            </div>
-            <div class="card-content">
-              <div class="media">
-                <div class="media-left">
-                  <figure class="image is-48x48">
-                    <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
-                  </figure>
-                </div>
-                <div class="media-content">
-                  <p class="title is-4">John Smith</p>
-                  <p class="subtitle is-6">@johnsmith</p>
-                </div>
-              </div>
+      </div>
 
-              <div class="content">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-                <a href="#">#css</a> <a href="#">#responsive</a>
-                <br>
-                <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+      <div class="column is-one-quarter">
+        <div class="card">
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+            </figure>
+          </div>
+          <div class="card-content">
+
+
+            <div class="content">
+              <h1 class="title">Berita baru</h1>
+
+              <div class="block">
+                <span class="tag">Politik</span>
+                <span class="tag">otomotif</span>
               </div>
+              <p>
+
+                <small>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+                  <a href="#">#css</a> <a href="#">#responsive</a>
+                </small>
+              </p>
+              <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
             </div>
           </div>
         </div>
-        <div class="column">
-          <div class="card">
-            <div class="card-image">
-              <figure class="image is-4by3">
-                <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-              </figure>
-            </div>
-            <div class="card-content">
-              <div class="media">
-                <div class="media-left">
-                  <figure class="image is-48x48">
-                    <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
-                  </figure>
-                </div>
-                <div class="media-content">
-                  <p class="title is-4">John Smith</p>
-                  <p class="subtitle is-6">@johnsmith</p>
-                </div>
-              </div>
+      </div>
 
-              <div class="content">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-                <a href="#">#css</a> <a href="#">#responsive</a>
-                <br>
-                <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+      <div class="column is-one-quarter">
+        <div class="card">
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+            </figure>
+          </div>
+          <div class="card-content">
+
+
+            <div class="content">
+              <h1 class="title">Berita baru</h1>
+
+              <div class="block">
+                <span class="tag">Politik</span>
+                <span class="tag">otomotif</span>
               </div>
+              <p>
+
+                <small>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+                  <a href="#">#css</a> <a href="#">#responsive</a>
+                </small>
+              </p>
+              <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
             </div>
           </div>
         </div>
@@ -309,57 +176,4 @@
 
     </div>
   </section>
-
-  <footer class="footer">
-
-    <div class="container">
-
-      <section class="section">
-        <article class="media">
-          <figure class="media-left" style="align-self: center">
-            <a class="image is-64x64" href="#">
-              <img class="" src="{{ url_for('static', filename='LOGO.png') }}">
-            </a>
-          </figure>
-          <div class="media-content">
-            <strong
-            class="logo-text"
-            >Student Wellness
-            </strong
-            >
-          </div>
-        </article>
-        <div class="columns">
-          <div class="column is-half">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          </div>
-          <div class="column is-half">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          </div>
-        </div>
-      </div>
-      </section>
-
-    <div class="content has-text-centered">
-      <p>
-        <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
-        <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
-        is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
-      </p>
-    </div>
-  </footer>
-
-
-
-</body>
-</html>
+  {% endblock %}

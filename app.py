@@ -1,18 +1,12 @@
-from pymongo import MongoClient
-import jwt
-from datetime import datetime, timedelta
-from pymongo import MongoClient
-import jwt
-import datetime
-import hashlib
-from flask import Flask, render_template, jsonify, request, redirect, url_for
-from werkzeug.utils import secure_filename
-from datetime import datetime, timedelta
+from flask import Flask, render_template, redirect, url_for, request
+import Controller.Home.home as dashboard
+import Controller.LoginSignup.login_or_signup as auth
+import Controller.admin.article as article
 
 app = Flask(__name__)
 
 app.config['TEMPLATES_AUTO_RELOAD'] = True
-app.config['UPLOAD_FOLDER'] = './static/profile_pics'
+# app.config['UPLOAD_FOLDER'] = './static/profile_pics'
 
 SECRET_KEY = 'KLP6'
 
@@ -25,10 +19,74 @@ MONGODB_CONNECTION_STRING = ''
 def home():
    return render_template('index.html')
 
-
 @app.route('/articles', methods=['GET'])
 def articles():
    return render_template('article.html')
+
+@app.route('/about', methods=['GET'])
+def about():
+   return render_template('about.html')
+
+@app.route('/report', methods=['GET'])
+def report():
+   return render_template('report.html')
+
+@app.route('/signin', methods=['GET'])
+def login():
+   msg = request.args.get("msg")
+   return render_template("signin.html", msg=msg)
+
+@app.route("/sign_in", methods=["POST"])
+def sign_in():
+   return auth.sign_in()
+
+@app.route('/sign_up/check_dup', methods=['POST'])
+def check_dup():
+   return auth.check_dup()
+
+@app.route("/sign_up/save", methods=["POST"])
+def sign_up():
+   return auth.sign_up()
+
+
+@app.route('/v2', methods=['GET'])
+def main():
+   valid = dashboard.valid()
+
+   if valid == "expired":
+      return redirect(url_for("login", msg="There was problem logging you in"))
+   elif valid == "fail":
+      return redirect(url_for("login", msg="There was problem logging you in"))
+   else:
+      return render_template("home.html", user=valid)
+      
+@app.route('/v2/<user>/articles', methods=['GET'])
+def articles_doc(user):
+   valid = dashboard.valid()
+
+   if valid == "expired":
+      return redirect(url_for("main"))
+   elif valid == "fail":
+      return redirect(url_for("main"))
+   else:
+      return render_template('dokter/articles.html', user=user)
+
+@app.route('/v2/<user>/api/post_article', methods=['POST'])
+def articles_post(user):
+   valid = dashboard.valid()
+   user = user
+
+   if valid == "expired":
+      return redirect(url_for("main"))
+   elif valid == "fail":
+      return redirect(url_for("main"))
+   else:
+      return article.save_post(user)
+
+@app.route('/v2/<user>/api/get_articles', methods=['GET'])
+def articles_get(user):
+   username = user
+   return article.show_post(user)
 
 if __name__ == '__main__':
    app.run('0.0.0.0', port=5000, debug=True)

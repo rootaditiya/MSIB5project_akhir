@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block title %}Report Isue {% endblock %}
+
+{% block header %}
+<!-- header -->
+{% endblock %}
+
+{% block content %}
+
+<section class="section">
+  <div class="container">
+    <div class="block has-text-centered">
+      <h1 class="title">Report an issue</h1>
+    </div>
+
+    <div class="block has-item-centered">
+      <div class="box" style="max-width: 30em; margin: auto;">
+
+        <div class="field">
+          <label class="label">Url where you found the issue</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="ex: https:://issue.html">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Description an issue (Optional)</label>
+          <div class="control">
+            <textarea class="textarea" placeholder="Description...."></textarea>
+          </div>
+        </div>
+
+        <nav class="level">
+          <div class="level-left"></div>
+          <div class="level-right">
+            <div class="leve-item">
+              <button class="button is-link">Report</button>
+            </div>
+          </div>
+        </nav>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+{% endblock %}
