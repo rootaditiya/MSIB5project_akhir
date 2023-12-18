@@ -1,92 +1,53 @@
-from flask import Flask, render_template, redirect, url_for, request
-import Controller.Home.home as dashboard
-import Controller.LoginSignup.login_or_signup as auth
-import Controller.admin.article as article
+from flask import Flask
+from Controller import frontend, auth, backend
+from Controller.dokter import article_user
 
 app = Flask(__name__)
 
 app.config['TEMPLATES_AUTO_RELOAD'] = True
-# app.config['UPLOAD_FOLDER'] = './static/profile_pics'
-
-SECRET_KEY = 'KLP6'
-
-MONGODB_CONNECTION_STRING = ''
 
 ## Setiap URL memiliki nama fungsi yang sama,
 ## Alama-alamat pada route('/'), dll. harus tidak boleh sama.
 
 @app.route('/', methods=['GET'])
-def home():
-   return render_template('index.html')
+def index():
+   return frontend.index()
 
 @app.route('/articles', methods=['GET'])
-def articles():
-   return render_template('article.html')
+def article():
+   return frontend.article()
 
 @app.route('/about', methods=['GET'])
 def about():
-   return render_template('about.html')
+   return frontend.about()
 
 @app.route('/report', methods=['GET'])
 def report():
-   return render_template('report.html')
+   return frontend.report()
 
-@app.route('/signin', methods=['GET'])
+@app.route('/login', methods=['GET'])
 def login():
-   msg = request.args.get("msg")
-   return render_template("signin.html", msg=msg)
+   return frontend.login()
 
 @app.route("/sign_in", methods=["POST"])
 def sign_in():
    return auth.sign_in()
 
-@app.route('/sign_up/check_dup', methods=['POST'])
-def check_dup():
-   return auth.check_dup()
-
 @app.route("/sign_up/save", methods=["POST"])
 def sign_up():
    return auth.sign_up()
 
+@app.route("/sign_up/check_dup", methods=["POST"])
+def check_dup():
+   return auth.check_dup()
 
-@app.route('/v2', methods=['GET'])
+@app.route("/v2")
 def main():
-   valid = dashboard.valid()
+   return backend.main()
 
-   if valid == "expired":
-      return redirect(url_for("login", msg="There was problem logging you in"))
-   elif valid == "fail":
-      return redirect(url_for("login", msg="There was problem logging you in"))
-   else:
-      return render_template("home.html", user=valid)
-      
-@app.route('/v2/<user>/articles', methods=['GET'])
-def articles_doc(user):
-   valid = dashboard.valid()
-
-   if valid == "expired":
-      return redirect(url_for("main"))
-   elif valid == "fail":
-      return redirect(url_for("main"))
-   else:
-      return render_template('dokter/articles.html', user=user)
-
-@app.route('/v2/<user>/api/post_article', methods=['POST'])
-def articles_post(user):
-   valid = dashboard.valid()
-   user = user
-
-   if valid == "expired":
-      return redirect(url_for("main"))
-   elif valid == "fail":
-      return redirect(url_for("main"))
-   else:
-      return article.save_post(user)
-
-@app.route('/v2/<user>/api/get_articles', methods=['GET'])
-def articles_get(user):
-   username = user
-   return article.show_post(user)
+@app.route("/v2/<user>/articles")
+def user_article(user):
+   return article_user.main()
 
 if __name__ == '__main__':
    app.run('0.0.0.0', port=5000, debug=True)

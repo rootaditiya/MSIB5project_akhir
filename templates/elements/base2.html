@@ -8,10 +8,9 @@
   <link rel="icon" href="{{url_for('static', filename='favico.ico')}}" type="image/x-icon" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   
-  <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
   <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js" integrity="sha512-zMfrMAZYAlNClPKjN+JMuslK/B6sPM09BGvrWlW+cymmPmsUT1xJF3P4kxI3lOh9zypakSgWaTpY6vDJY/3Dig==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>  
 
   <script src="{{url_for('static', filename='scripts/script.js')}}"></script>
   {% block js %}
@@ -19,7 +18,7 @@
 </head>
 <body class="has-navbar-fixed-top">
 
-  {%include 'header.html'%}
+  {%include 'elements/header.html'%}
 
   <header>
     {% block header %}{% endblock %}
@@ -28,7 +27,7 @@
     <div class="menu-container px-1 has-background-white" id="sidbar">
       <div>
         <div class="menu-wrapper py-1">
-          {%include "sidebar.html"%}
+          {%include "elements/sidebar.html"%}
         </div>
       </div>
     </div>

@@ -58,24 +58,27 @@
   </div>
 
   <div class="navbar-end">
-    {% block button %}
     <!-- script -->
-
-    {% endblock %}
-
-    <div class="navbar-item" id="login-button">
+    <div class="navbar-item">
       <div class="buttons">
-        <a class="button is-info" href="/signin" onclick="$('#login-button').toggeClass('is-hidden')">
-          <strong>Login</strong>
-        </a>
-      </div>
-    </div>
-
-    <div class="navbar-item has-dropdown is-hoverable is-hidden">
-      <a href="#" class="navbar-link">
+        {%if user%}
+        <strong>user.username</strong>
+        {%else%}
+        <a 
+        class="button is-info" 
+        href="/login"
+        id="button-login">
+        <strong>Login</strong>
       </a>
+      {%endif%}
     </div>
   </div>
+
+  <div class="navbar-item has-dropdown is-hoverable is-hidden">
+    <a href="#" class="navbar-link">
+    </a>
+  </div>
+</div>
 </div>
 </nav>
 
