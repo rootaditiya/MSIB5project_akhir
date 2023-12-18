@@ -2,9 +2,13 @@
 
 {% block title %}Student Wellness | Sehat dan Sukses{% endblock %}
 
-{% block button_login %}
-<!-- button -->
-<h1>test</h1>
+{% block js %}
+<script src="{{url_for('static', filename='scripts/articles.js')}}"></script>
+<script type="text/javascript">
+  $(window).ready(function(){
+    get_article_new();
+  })
+</script>
 {% endblock %}
 
 {% block header %}
@@ -47,7 +51,7 @@
 
     </div>
 
-    <div class="columns is-multiline is-mobile">
+    <div class="columns is-multiline is-mobile" id="article-box">
 
       <div class="column is-one-quarter">
         <div class="card">

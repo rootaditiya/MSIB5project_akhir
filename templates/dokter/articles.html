@@ -3,7 +3,11 @@
 
 {% block js %}
 <script type="text/javascript" src="{{url_for('static',filename='scripts/dokter/article.js')}}"></script>
-
+<script type="text/javascript">
+	$(document).ready(function () {
+		get_post()
+	});
+</script>
 {% endblock %}
 
 {% block header %}
@@ -43,71 +47,85 @@
 											<p class="control">
 												<input id="input-judul" class="input" type="text" placeholder="Judul Artikel">
 											</p>
+											<p class="control">
+												<input id="input-subtitle" class="input" type="text" placeholder="subtitle">
+											</p>
 
 											<p class="control">
-												<textarea
-												id="textarea-post"
-												class="textarea"
-												placeholder="Konten"
-												></textarea>
-											</p>
-										</div>
-										<nav class="level is-mobile">
-											<div class="level-left">
-												<div class="level-item">
-													<div class="file">
-														<label class="file-label">
-															<input id="input-pic" class="file-input" type="file" name="resume">
-															<span class="file-cta">
-																<span class="file-icon">
-																	<i class="fas fa-upload"></i>
-																</span>
-																<span class="file-label">
-																	Choose a file…
-																</span>
-															</span>
-														</label>
-													</div>
-												</div>
-											</div>
-											<div class="level-right">
-												<div class="level-item">
-													<a class="button is-sparta" onclick="post()">
-														Create post
-													</a>
-												</div>
-												<div class="level-item">
-													<a class="button is-sparta is-outlined" onclick="$('#modal-post').removeClass('is-active')">
-														Cancel
-													</a>
-												</div>
-											</div>
-										</nav>
+												<label class="file-label" style="width: 100%">
+													<input
+													id="input-pic"
+													class="file-input"
+													type="file"
+													name="resume"
+													/>
+													<span class="file-cta"
+													><span class="file-icon"
+													><i class="fa fa-upload"></i
+													></span>
+													<span class="file-label">Select a file</span>
+												</span>
+												<span
+												id="file-name"
+												class="file-name"
+												style="width: 100%; max-width: 100%"
+												>{{ user_info.profile_pic }}</span
+												>
+											</label>
+										</p>
+
+										<p class="control">
+											<textarea
+											id="textarea-post"
+											class="textarea"
+											placeholder="Konten"
+											></textarea>
+										</p>
 									</div>
-								</article>
-							</div>
+									<nav class="level is-mobile">
+										<div class="level-left">
+										</div>
+										<div class="level-right">
+											<div class="level-item">
+												<a class="button is-info" onclick="post()">
+													Create post
+												</a>
+											</div>
+											<div class="level-item">
+												<a class="button is-sparta is-outlined" onclick="$('#modal-post').removeClass('is-active')">
+													Cancel
+												</a>
+											</div>
+										</div>
+									</nav>
+								</div>
+							</article>
 						</div>
-						<button class="modal-close is-large" aria-label="close" onclick="$('#modal-post').removeClass('is-active')"></button>
 					</div>
-				</p>
-			</div>
+					<button class="modal-close is-large" aria-label="close" onclick="$('#modal-post').removeClass('is-active')"></button>
+				</div>
+			</p>
 		</div>
-	</article>
+	</div>
+</article>
 </section>
 
-<section class="section">
-		<table class="table">
-			<thead class="thead-light">
-				<tr>
-					<th scope="col" style="width:30%">Judul</th>
-					<th scope="col">konten</th>
-					<th scope="col">Action</th>
-				</tr>
-			</thead>
-			<tbody id="article-list">
-				
-			</tbody>
-		</table>
+<section class="section" id="content-1">
+	<table class="table">
+		<thead class="thead-light">
+			<tr>
+				<th scope="col">Post at</th>
+				<th scope="col">last edited at</th>
+				<th scope="col">Picture</th>
+				<th scope="col" style="">Judul</th>
+				<th scope="col">Action</th>
+			</tr>
+		</thead>
+		<tbody id="article-list">
+
+		</tbody>
+	</table>
+	
 </section>
 
 {% endblock %}

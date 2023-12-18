@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request
 from Controller import frontend, auth, backend
 from Controller.dokter import article_user
 
@@ -12,6 +12,14 @@ app.config['TEMPLATES_AUTO_RELOAD'] = True
 @app.route('/', methods=['GET'])
 def index():
    return frontend.index()
+
+@app.route('/get_article_new/', methods=['GET'])
+def get_article_new():
+   return frontend.get_article_new(4)
+
+@app.route('/get_article_trend/', methods=['GET'])
+def get_article_trend():
+   return frontend.get_article_trend()
 
 @app.route('/articles', methods=['GET'])
 def article():
@@ -45,9 +53,30 @@ def check_dup():
 def main():
    return backend.main()
 
-@app.route("/v2/<user>/articles")
-def user_article(user):
+@app.route("/v2/articles")
+def user_article():
    return article_user.main()
+
+@app.route("/v2/post-article", methods=["POST"])
+def post_article():
+   return article_user.post()
+
+@app.route('/v2/get-article', methods=['GET'])
+def get_articles():
+   return article_user.get()
+
+@app.route('/v2/del-article', methods=['POST'])
+def del_articles():
+   return article_user.del_article()
+
+@app.route('/v2/get-article/<id>', methods=['GET'])
+def get_one_articles(id):
+   id = id
+   return article_user.get_one(id)
+
+@app.route('/v2/edit-article', methods=['POST'])
+def edit_articles():
+   return article_user.edit_article()
 
 if __name__ == '__main__':
    app.run('0.0.0.0', port=5000, debug=True)

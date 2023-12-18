@@ -7,6 +7,15 @@ from Controller import connection, secretkey
 db = connection.connection()
 SECRET_KEY = secretkey.SECRET_KEY
 
+def main():
+    token_receive = request.cookies.get("mytoken")
+    if token_receive:
+        payload = jwt.decode(token_receive, SECRET_KEY, algorithms=["HS256"])
+        user_info = db.users.find_one({'username': payload.get('id')})
+    else:
+        user_info = False
+    return user_info
+
 def sign_in():
     username_receive = request.form["username_give"]
     password_receive = request.form["password_give"]

@@ -3,8 +3,15 @@
 Informasi dan Artikel Seputar Kesehatan Mahasiswa
 {% endblock %}
 
-{% block header %}
-<!-- header -->
+{% block js %}
+<script src="{{url_for('static', filename='scripts/articles.js')}}"></script>
+
+<script type="text/javascript">
+  $(window).ready(function(){
+    get_article_trend();
+    get_article_new();
+  })
+</script>
 {% endblock %}
 
 {% block content %}
@@ -45,7 +52,7 @@ Informasi dan Artikel Seputar Kesehatan Mahasiswa
       <div class="tile is-vertical is-8">
 
         <div class="tile is-parent">
-          <article class="tile is-child ">
+          <article class="tile is-child " id="trend-1">
             <figure class="image is-5by3">
               <img src="https://asset.kompas.com/crops/GYJ2h0AeeAkPgluuTSCtTEOAU3c=/0x0:1000x667/230x153/data/photo/2023/12/13/6578fe7df243b.jpg">
             </figure>
@@ -56,7 +63,7 @@ Informasi dan Artikel Seputar Kesehatan Mahasiswa
         </div>
       </div>
       <div class="tile is-parent">
-        <article class="tile is-child">
+        <article class="tile is-child" id="trend-box">
 
           <div class="box">
             <article class="media">
@@ -135,7 +142,7 @@ Informasi dan Artikel Seputar Kesehatan Mahasiswa
   <div class="container">
     <h1 class="title">Artikel Terbaru</h1>
 
-    <div class="columns is-multiline is-mobile">
+    <div class="columns is-multiline is-mobile"  id="article-box">
 
       <div class="column is-one-quarter">
         <div class="card">

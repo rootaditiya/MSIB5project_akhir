@@ -1,4 +1,8 @@
-
+function sign_out() {
+  $.removeCookie("mytoken", { path: "/" });
+  alert("Signed out!");
+  window.location.href = "/login";
+}
 function toggle_sign_up() {
   $("#field-email").toggleClass("is-hidden")
   $("#sign-up-box").toggleClass("is-hidden")

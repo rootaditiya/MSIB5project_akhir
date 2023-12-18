@@ -61,8 +61,10 @@
     <!-- script -->
     <div class="navbar-item">
       <div class="buttons">
-        {%if user%}
-        <strong>user.username</strong>
+        {%if user_info%}
+        <strong>{{user_info.username}}</strong>
+        {%elif login%}
+
         {%else%}
         <a 
         class="button is-info" 

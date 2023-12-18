@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% block title %}{% endblock %} - Student Wellness</title>
-  <link rel="shortcut icon" href="{{url_for('static', filename='favico.ico')}}" type="image/x-icon" />
-  <link rel="icon" href="{{url_for('static', filename='favico.ico')}}" type="image/x-icon" />
+  <link rel="shortcut icon" href="{{url_for('static', filename='LOGO.ico')}}" type="image/x-icon" />
+  <link rel="icon" href="{{url_for('static', filename='fLOGO.ico')}}" type="image/x-icon" />
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/style.css')}}">
@@ -19,7 +19,6 @@
   {% endblock %}
 </head>
 <body class="has-navbar-fixed-top">
-
   {%include 'elements/header.html'%}
   <header>
     {% block header %}
