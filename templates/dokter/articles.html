@@ -1,8 +1,8 @@
-{% extends 'base2.html' %}
-{% block title %}Student Wellness | Sehat dan Sukses{% endblock %}
+{% extends 'elements/base2.html' %}
+{% block title %}{{user_info.username}} - articles{% endblock %}
 
 {% block js %}
-<script type="text/javascript" src="{{url_for('static',filename='scripts/auth/article.js')}}"></script>
+<script type="text/javascript" src="{{url_for('static',filename='scripts/dokter/article.js')}}"></script>
 
 {% endblock %}
 
@@ -16,7 +16,7 @@
 <section class="section">
 	<article class="media">
 		<figure class="media-left" style="align-self: center;">
-			<a class="image is-32x32" href="/user/{{user.username}}">
+			<a class="image is-32x32" href="/user/{{user_info.username}}">
 				<img class="is-rounded" src="{{url_for('static', filename='LOGO.png')}}" />
 			</a>
 		</figure>
