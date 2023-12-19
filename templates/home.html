@@ -1,6 +1,10 @@
 {% extends 'elements/base2.html' %}
 {% block title %}Dashboard{% endblock %}
-
+{% block meta %}
+<meta property="og:title" content="Dashboard - Student Wellness" />
+<meta property="og:description" content="Sehat dan Sukses" />
+<meta property="og:image" content="{{ url_for('static', filename='LOGO.PNG') }}" />
+{% endblock %}
 
 {% block js %}
 <script type="text/javascript">

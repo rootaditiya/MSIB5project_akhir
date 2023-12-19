@@ -1,4 +1,10 @@
 {% extends 'elements/base.html' %}
+{% block meta %}
+<meta property="og:title" content="Report - Student Wellness" />
+<meta property="og:description" content="I got some issue" />
+<meta property="og:image" content="{{ url_for('static', filename='LOGO.PNG') }}" />
+{% endblock %}
+
 {% block title %}Report Isue {% endblock %}
 
 {% block header %}

@@ -1,4 +1,9 @@
 {% extends 'elements/base.html' %}
+{% block meta %}
+<meta property="og:title" content="Login - Student Wellness" />
+<meta property="og:description" content="Sehat dan sukses" />
+<meta property="og:image" content="{{ url_for('static', filename='LOGO.PNG') }}" />
+{% endblock %}
 {% block js %}
 <script src="{{url_for('static', filename='scripts/auth/login.js')}}"></script>
 <script type="text/javascript">

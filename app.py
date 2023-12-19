@@ -5,6 +5,7 @@ from dotenv import load_dotenv
 from flask import Flask, request
 from Controller import frontend, auth, backend
 from Controller.dokter import article_user, konseling as doc_konseling
+from Controller.pasien import konsul
 
 dotenv_path = join(dirname(__file__), '.env')
 load_dotenv(dotenv_path)
@@ -65,6 +66,10 @@ def check_dup():
 @app.route("/v2")
 def main():
    return backend.main()
+
+@app.route("/v2/konseling")
+def konsulasi():
+   return konsul.main()
 
 @app.route("/v2/<user>/konseling")
 def konseling(user):

@@ -1,4 +1,9 @@
 {% extends 'elements/base.html' %}
+{% block meta %}
+<meta property="og:title" content="About - Student Wellness" />
+<meta property="og:description" content="Mahasiswa sering menghadapi tekanan akademis yang tinggi,jadwal yang padat, dan kadang-kadang terbatasnya akses terhadap sumber daya kesehatan. Dalam beberapa kasus, aspek kesehatan mental dan fisik sering terabaikan." />
+<meta property="og:image" content="{{ url_for('static', filename='LOGO.PNG') }}" />
+{% endblock %}
 {% block title %}About Us{% endblock %}
 
 {% block header %}
@@ -27,14 +32,7 @@
     <div class="block">
       <div class="block">
         <strong>Latar Belakang Project</strong>
-        <p >Mahasiswa sering menghadapi tekanan akademis yang
-          tinggi,
-          jadwal yang padat, dan kadang-kadang terbatasnya
-          akses
-          terhadap sumber daya kesehatan. Dalam beberapa
-          kasus,
-          aspek kesehatan mental dan fisik sering
-        terabaikan.</p>
+        <p >Mahasiswa sering menghadapi tekanan akademis yang tinggi,jadwal yang padat, dan kadang-kadang terbatasnya akses terhadap sumber daya kesehatan. Dalam beberapa kasus, aspek kesehatan mental dan fisik sering terabaikan.</p>
       </div>
       <div class="block">
         <div class="block has-text-centered">

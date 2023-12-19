@@ -1,4 +1,9 @@
 {% extends 'elements/base.html' %}
+{% block meta %}
+<meta property="og:title" content="Student Wellness" />
+<meta property="og:description" content="Sehat dan Sukses" />
+<meta property="og:image" content="{{ url_for('static', filename='LOGO.PNG') }}" />
+{% endblock %}
 
 {% block title %}Student Wellness | Sehat dan Sukses{% endblock %}
 
