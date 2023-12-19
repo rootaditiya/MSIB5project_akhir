@@ -1,0 +1,158 @@
+{% extends 'elements/base2.html' %}
+{% block title %}{{user_info.username}} - konseling{% endblock %}
+
+{% block js %}
+<!-- script -->
+
+{% endblock %}
+
+{% block header %}
+<!-- header -->
+{% endblock %}
+
+{% block button_login %}
+<!-- button -->
+{% endblock %}
+
+
+{% block content %}
+<!-- content -->
+
+<section class="section container">
+	<div class="box">
+		<article class="media">
+			<div class="media-left">
+				<figure class="image is-128x128 is-3by4">
+					<img src="../../static/pic/profile/Ronald.png" alt="Image">
+				</figure>
+			</div>
+			<div class="media-content">
+				<div class="content">
+					<p>
+						
+						<!-- Main container -->
+						<nav class="level">
+							<!-- Left side -->
+							<div class="level-left">
+								<div class="level-item">
+									<div>
+										<strong>Dr. User 1</strong> <small>@user1</small> 
+										<br>
+										<small>Dokter Jiwa</small>
+										<span class="tag">
+											5 tahun
+										</span>
+									</div>
+								</div>
+								
+							</div>
+
+							<!-- Right side -->
+							<div class="level-right">
+								<button class="button is-warning">Enable?</button>
+							</div>
+						</nav>
+
+						<div class="block is-info-outlined">
+							<div class="notification is-link is-light">
+								<strong>RP. 50.000</strong>
+							</div>
+						</div>
+
+						<div class="block">
+							<span>
+								<span class="icon">
+									<i class="fas fa-solid fa-graduation-cap"></i>
+								</span>
+								<strong>Alumnus</strong><br>
+								<small>Havard University</small>
+							</span>
+						</div>
+						<div class="block">
+							<span>
+								<span class="icon">
+									<i class="fa-solid fa-stethoscope"></i>
+								</span>
+								<strong>Praktek</strong><br>
+								<small>Padang, Sumatera Barat</small>
+							</span>
+						</div>
+						<div class="block">
+							<span>
+								<span class="icon">
+									<i class="fa-regular fa-id-badge"></i>
+								</span>
+								<strong>Nomor STR</strong><br>
+								<small>1321100223208616</small>
+							</span>
+						</div>
+						tag-line
+					</p>
+					<div class="block">
+						<button class="button is-fullwidth is-warning is-light">
+							<span class="icon-text">
+								<span class="icon">
+									<i class="fa-solid fa-pencil"></i>
+								</span>
+								<span>Edit</span>
+							</span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</article>
+	</div>
+</section>
+
+<section class="section to-do">
+	<div class="box">
+		<a href="">
+			<div class="notification is-warning is-light">
+				<div class="block">
+					<nav class="level">
+						<div class="level-left">
+							<div class="level-item">
+								<strong>Pasien-1 </strong> - <small>konsul dong dok</small>
+								
+							</div>
+						</div>
+						<div class="level-right">
+							<div class="level-item">
+								<button class="button is-info is-light">
+									Atempt
+								</button>
+							</div>
+						</div>
+					</nav>
+					<p>
+						<strong>on-going</strong>
+					</p>
+				</div>
+			</div>
+		</a>
+
+		<a href="">
+			<div class="notification is-success is-light">
+				<nav class="level">
+					<div class="level-left">
+						<div class="level-item">
+							<strong>Pasien-1 </strong> - <small>konsul dong dok</small>
+
+						</div>
+					</div>
+					<div class="level-right">
+						<div class="level-item">
+							<button class="button is-danger is-light">
+								delete
+							</button>
+						</div>
+					</div>
+				</nav>
+				<p>
+					Finished
+				</p>
+			</div>
+		</a>
+	</div>
+</section>
+{% endblock %}

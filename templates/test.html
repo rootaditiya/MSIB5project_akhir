@@ -1,4 +1,9 @@
-{% extends 'base.html' %}
+{% extends 'elements/base.html' %}
+{% block meta %}
+<meta property="og:title" content="My website title" />
+<meta property="og:description" content="Summary of the contents of the page you are viewing" />
+<meta property="og:image" content="{{ url_for('static', filename='ogimage.png') }}" />
+{% endblock %}
 {% block title %}Student Wellness | Sehat dan Sukses{% endblock %}
 
 {% block js %}

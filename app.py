@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 
 from flask import Flask, request
 from Controller import frontend, auth, backend
-from Controller.dokter import article_user, konseling
+from Controller.dokter import article_user, konseling as doc_konseling
 
 dotenv_path = join(dirname(__file__), '.env')
 load_dotenv(dotenv_path)
@@ -69,7 +69,7 @@ def main():
 @app.route("/v2/<user>/konseling")
 def konseling(user):
    user = user
-   return f"laman konseling - {user}"
+   return doc_konseling.main()
 
 @app.route("/v2/articles")
 def user_article():
