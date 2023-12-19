@@ -1,8 +1,15 @@
+import os
+from os.path import join, dirname
+from dotenv import load_dotenv
+
 from pymongo import MongoClient
 
-MONGODB_CONNECTION_STRING = 'mongodb://ditiya:sparta@ac-rcamlhi-shard-00-00.rc6xlci.mongodb.net:27017,ac-rcamlhi-shard-00-01.rc6xlci.mongodb.net:27017,ac-rcamlhi-shard-00-02.rc6xlci.mongodb.net:27017/?ssl=true&replicaSet=atlas-7keaa1-shard-0&authSource=admin&retryWrites=true&w=majority'
+dotenv_path = join(dirname(__file__), '.env')
+load_dotenv(dotenv_path)
 
 def connection():
-	client = MongoClient(MONGODB_CONNECTION_STRING)
-	db = client.dbproject_akhir
+	MONGODB_URI = os.environ.get("MONGODB_URI")
+	DB_NAME =  "dbproject_akhir"
+	client = MongoClient(MONGODB_URI)
+	db = client[DB_NAME]
 	return db

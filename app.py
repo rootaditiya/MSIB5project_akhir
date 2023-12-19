@@ -1,6 +1,13 @@
+import os
+from os.path import join, dirname
+from dotenv import load_dotenv
+
 from flask import Flask, request
 from Controller import frontend, auth, backend
 from Controller.dokter import article_user, konseling
+
+dotenv_path = join(dirname(__file__), '.env')
+load_dotenv(dotenv_path)
 
 app = Flask(__name__)
 
