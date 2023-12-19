@@ -15,8 +15,8 @@
       <li>
         <a class="">To Do</a>
         <ul>
-          <li><a href="">Konseling</a></li>
-          <li><a>Konsultasi karir</a></li>
+          <li><a href="/v2/{{user_info.username}}/konseling">Konseling</a></li>
+          <li><a>Konsultasi karir -&nbsp; <small class="is-warning">ongoing</small></a></li>
           <li><a href="/v2/articles">Articles</a></li>
 
         </ul>
@@ -24,10 +24,5 @@
       
     </ul>
     {%endif%}
-    <p class="menu-label">
-      {{user_info.username}}
-    </p>
-    <ul class="menu-list">
-      <li><a href="" onclick="sign_out()">Logout</a></li>
-    </ul>
+    
   </aside>

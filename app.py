@@ -1,6 +1,6 @@
 from flask import Flask, request
 from Controller import frontend, auth, backend
-from Controller.dokter import article_user
+from Controller.dokter import article_user, konseling
 
 app = Flask(__name__)
 
@@ -15,7 +15,7 @@ def index():
 
 @app.route('/get_article_new/', methods=['GET'])
 def get_article_new():
-   return frontend.get_article_new(4)
+   return frontend.get_article_new(100)
 
 @app.route('/get_article_trend/', methods=['GET'])
 def get_article_trend():
@@ -24,6 +24,12 @@ def get_article_trend():
 @app.route('/articles', methods=['GET'])
 def article():
    return frontend.article()
+
+@app.route('/articles/<judul>', methods=['GET'])
+def baca(judul):
+   judul = judul
+   id = request.args.get('id')
+   return frontend.baca(id)
 
 @app.route('/about', methods=['GET'])
 def about():
@@ -52,6 +58,11 @@ def check_dup():
 @app.route("/v2")
 def main():
    return backend.main()
+
+@app.route("/v2/<user>/konseling")
+def konseling(user):
+   user = user
+   return f"laman konseling - {user}"
 
 @app.route("/v2/articles")
 def user_article():

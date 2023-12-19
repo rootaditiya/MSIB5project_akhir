@@ -1,6 +1,9 @@
 from flask import render_template, request, jsonify
 from Controller import connection
 from Controller import auth
+from bson.objectid import ObjectId
+import json
+from bson import json_util
 
 db = connection.connection()
 
@@ -12,6 +15,11 @@ def index():
 def article():
 	user_info = auth.main()
 	return render_template('article.html', user_info=user_info)
+
+def baca(id):
+	user_info = auth.main()
+	post = db.articles.find_one(ObjectId(id))
+	return render_template('baca_article.html', user_info=user_info, post=post)
 
 def about():
 	user_info = auth.main()

@@ -83,7 +83,7 @@ function get_post(){
 
               <td>
               <figure class="media-left" style="align-self: center">
-              <a class="image is-32x32" href="/user/{{ user_info.username }}">
+              <a class="image is-32x32" href="">
               <img
               class=""
               src="/${post['file']}"
@@ -92,7 +92,7 @@ function get_post(){
               </figure>
               </td>
               <td>
-              <a href="/articles/${post['title']}">
+              <a href="/articles/${post['title']}?id=${post['_id']}">
               ${post['title']}
               </a>
               </td>

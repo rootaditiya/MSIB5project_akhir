@@ -62,7 +62,22 @@
     <div class="navbar-item">
       <div class="buttons">
         {%if user_info%}
-        <strong>{{user_info.username}}</strong>
+        <a href="/v2" class="navbar-item">
+          <strong class="has-text-info">Dashboard</strong>
+        </a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a href="#" class="navbar-link">
+            {{user_info.username}}
+          </a>
+          <div class="navbar-dropdown is-right">
+            <a href="#" class="navbar-item">
+              Profile
+            </a>
+            <a href="#" class="navbar-item">Settings</a>
+            <hr class="navbar-divider" />
+            <a href="#"  onclick="sign_out()" class="navbar-item">Log Out</a>
+          </div>
+        </div>
         {%elif login%}
 
         {%else%}

@@ -1,0 +1,51 @@
+{% extends 'elements/base.html' %}
+{% block title %}{% endblock %}
+
+{% block js %}
+<!-- script -->
+<script src="{{url_for('static', filename='scripts/articles.js')}}"></script>
+<script>
+	let post_date = new Date('{{post['date']}}')
+	let time_before = time2str(post_date);
+	console.log(time_before);
+	$('#date').text(time_before);
+</script>
+{% endblock %}
+
+{% block header %}
+<!-- header -->
+{% endblock %}
+
+
+{% block content %}
+<!-- content -->
+
+
+<section class="section container">
+	<div class="columns">
+		<div class="column is-three-quarters">
+			<div class="box">
+				<h1 class="title">{{post['title']}}</h1>
+				<div id="" class="block">
+					<small id="date"></small>
+				</div>
+				<h2 class="subtitle">
+					{{post['subtitle']}}
+				</h2>
+				<figure class="image">
+					<img src="../{{post['file']}}">
+				</figure>
+				<div class="block">
+					<h2>{{post['content']}}</h2>
+				</div>
+			</div>
+		</div>
+		<div class="column">
+			<div class="box"></div>
+		</div>
+	</div>
+
+	
+</section>
+{% endblock %}
+
